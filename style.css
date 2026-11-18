@@ -1,0 +1,491 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #172033;
+}
+
+/* LOGIN AND SIGNUP */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eef3fb;
+    padding: 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px #00000012;
+}
+
+.auth-card h1 {
+    text-align: center;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.auth-card > p {
+    text-align: center;
+    color: #777;
+    margin: 15px 0;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-card label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.auth-card input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+}
+
+.auth-card button {
+    background: #2563eb;
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.auth-card button:hover {
+    background: #1d4ed8;
+}
+
+.auth-card a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+#auth-error {
+    color: red;
+    font-size: 13px;
+}
+
+
+/* DASHBOARD */
+
+.dashboard-page {
+    background: #f3f6fb;
+    height: 100vh;
+}
+
+.app-shell {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* 1. SIDEBAR */
+
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: white;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    padding: 22px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-brand h2 {
+    color: #2563eb;
+}
+
+.sidebar > h4 {
+    padding: 22px;
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.users-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 10px;
+}
+
+
+/* USER ITEMS */
+
+.user-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: none;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.user-item:hover,
+.user-item.selected {
+    background: #edf3ff;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #2563eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.user-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.user-copy small {
+    color: #888;
+}
+
+
+/* ONLINE OFFLINE STATUS */
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #aaa;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.status-dot.online {
+    background: #22c55e;
+}
+
+
+/* CURRENT USER FOOTER */
+
+.sidebar-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.my-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.my-details strong {
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.my-details small {
+    color: #22c55e;
+}
+
+#logout-btn {
+    border: none;
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* MAIN CHAT AREA */
+
+.chat-area {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* 9. TOP NAME BAR */
+
+.topbar {
+    height: 75px;
+    flex-shrink: 0;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.topbar div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.topbar small {
+    color: #888;
+    font-size: 11px;
+}
+
+.online-label {
+    color: #22c55e;
+    font-size: 13px;
+}
+
+
+/* EMPTY STATE */
+
+.empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 20px;
+}
+
+.empty-state h2 {
+    color: #2563eb;
+}
+
+.empty-state p {
+    color: #888;
+}
+
+
+/* CHAT PANEL */
+
+.chat-panel {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* 6 & 7. FRIEND NAME AND STATUS */
+
+.chat-header {
+    background: white;
+    padding: 14px 25px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chat-header h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.chat-header small {
+    color: #888;
+}
+
+
+/* 8. MAIN MESSAGE WINDOW */
+
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* 4 & 5. MESSAGES */
+
+.message-line {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.message-line.mine {
+    justify-content: flex-end;
+}
+
+.message-line.theirs {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 70%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px #00000008;
+}
+
+.mine .message-bubble {
+    background: #2563eb;
+    color: white;
+    border-bottom-right-radius: 3px;
+}
+
+.theirs .message-bubble {
+    background: white;
+    color: #172033;
+    border: 1px solid #eee;
+    border-bottom-left-radius: 3px;
+}
+
+.message-sender {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.message-bubble p {
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+
+.message-bubble small {
+    display: block;
+    text-align: right;
+    margin-top: 7px;
+    opacity: .7;
+    font-size: 10px;
+}
+
+
+/* 2 & 3. MESSAGE INPUT AND SEND BUTTON */
+
+.composer {
+    display: flex;
+    gap: 10px;
+    background: white;
+    border-top: 1px solid #ddd;
+    padding: 15px 20px;
+}
+
+.composer input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.composer input:focus {
+    border-color: #2563eb;
+}
+
+.composer button {
+    width: 50px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.composer button:hover {
+    background: #1d4ed8;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        width: 80px;
+    }
+
+    .sidebar-brand h2,
+    .sidebar > h4,
+    .user-copy,
+    .my-details,
+    #logout-btn {
+        display: none;
+    }
+
+    .sidebar-brand {
+        padding: 20px 5px;
+        text-align: center;
+    }
+
+    .user-item {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .sidebar-footer {
+        justify-content: center;
+        padding: 12px 5px;
+    }
+
+    .topbar {
+        padding: 0 12px;
+    }
+
+    .chat-header {
+        padding: 12px;
+    }
+
+    .chat-box {
+        padding: 15px 10px;
+    }
+
+    .message-bubble {
+        max-width: 85%;
+    }
+
+    .composer {
+        padding: 10px;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+
+}
